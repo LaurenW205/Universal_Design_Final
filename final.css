@@ -27,6 +27,12 @@ h3 {
   padding: .2em 0;
 }
 
+#point{
+  font-family: 'Lexend';
+  font-weight: 500;
+  padding: .2em 0;
+}
+
 p {
   margin: 1.8em 0;
   line-height: 1.8em;
@@ -39,7 +45,6 @@ h2 {font-size:2.0em;}
 
 h3 {font-size: 1.5em;}
 
-
 header,
 main,
 footer {
@@ -49,6 +54,20 @@ footer {
   box-shadow: 0 0 10px rgba(0,0,0,0.4);
 }
 
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    border: 1px solid #141313;
+    padding: 20px;
+    margin-bottom: 0; 
+    border-radius: 10px;
+    height: 100%; 
+    box-sizing: border-box;
+}
 
 a{
   color: rgb(0, 0, 0);
@@ -80,7 +99,7 @@ footer {
   text-align: center;
 }
 
-li {
+#home-nav {
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
 
@@ -97,7 +116,7 @@ grid-template-areas:
 
 header {grid-area: heady; background:#76ACAC;}
 nav {grid-area: navvy; background:#fdfdfd;}
-main {grid-area: mainy; background: white; max-height: 100%}
+main {grid-area: mainy; background: #76ACAC; max-height: 100%}
 footer {grid-area: footy; background: #76ACAC;}
 
 
@@ -160,6 +179,58 @@ nav ul li {
   "navvy     navvy     navvy"
   "mainy     mainy     mainy"
   "footy     footy     footy";
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+/* Responsive Table */
+@media (max-width: 600px) {
+    table, thead, tbody, th, td, tr {
+        display: block;
+    }
+    
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    
+    tr { border: 1px solid #ccc; margin-bottom: 10px; }
+    
+    td {
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    
+    td:before {
+        position: absolute;
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        font-weight: bold;
+    }
+    
+    /* Label the data */
+    td:nth-of-type(2):before { content: "Accessible Design"; }
+    td:nth-of-type(3):before { content: "Universal Design"; }
 }
 
 }
